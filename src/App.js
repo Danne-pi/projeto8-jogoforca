@@ -1,17 +1,17 @@
 import {createGlobalStyle} from "styled-components";
 import styled from "styled-components";
-import Keywords from "./areas/keywords/Keywords";
-import Gallow from "./areas/gallow/Gallow";
-import Tips from "./areas/tips/Tips";
+import Gallow from "./areas/Gallow";
+import Tips from "./areas/Tips";
+import Keywords from "./areas/Keyword"
 
 export default function App() {
     return (
         <>
             <GlobalStyle />
             <ThisApp>
-                <Keywords />
                 <Gallow />
                 <Tips />
+                <Keywords />
             </ThisApp>
         </>
     );
@@ -30,3 +30,4 @@ const ThisApp = styled.div`
   width: 100vw;
   height: 100vh;
 `;
+
