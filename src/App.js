@@ -18,7 +18,10 @@ export default function App() {
   }
 
 const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
   body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
     padding: 0;
     margin: 0;
   }

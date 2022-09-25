@@ -17,7 +17,7 @@ export default function Tips() {
     height: 60vh;
     background-color: aqua;
     position: absolute;
-    top: 60px;
+    top: 5vh;
     right: 5vw;
 
   `
