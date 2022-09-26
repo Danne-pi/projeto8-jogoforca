@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { UserContext } from "./myWrapper";
 import styled from "styled-components";
 import forca1 from "../assets/forca0.png"
 import forca2 from "../assets/forca1.png"

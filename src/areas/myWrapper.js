@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Gallow from "./Gallow";
 import Tips from "./Tips";
 import {  useState, createContext  } from "react";
+import MyMessage from "./Message";
 
 export const UserContext = createContext();
 
@@ -10,6 +11,20 @@ export default function MyWrapper() {
     const [clicked, setClicked] = useState([])
     const [hooked, setHooked] = useState(-1)
     const [point, setPoint] = useState(0)
+    const [maxpoint, setMaxpoint] = useState(0)
+
+    function LoadMessage(){
+        if (point < maxpoint) {
+            if (hooked > 5) {
+           return <MyMessage type={false}/>
+            }
+            else{
+               return null
+            }
+        }else{
+           return <MyMessage type={true}/>
+        }
+    }
 
     function WriteTheseWords(){
       return alphabet.map((item)=>(<div onClick={() => setClicked([...clicked, item])}
@@ -19,8 +34,9 @@ export default function MyWrapper() {
     }
 
     return (
-        <UserContext.Provider value={{clicked, hooked, setHooked, point, setPoint}}>
+        <UserContext.Provider value={{clicked, hooked, setHooked, point, setPoint, setMaxpoint}}>
           <Gallow image={hooked}/>
+          <LoadMessage />
           <Tips />
           <ThisKeywords>
             <div>

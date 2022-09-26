@@ -21,9 +21,10 @@ export default function Tips() {
       wordGetter.push(thisObject)
     }
     maxPoints = [...new Set(wordActual)];
+    setMaxpoint(maxPoints.length)
     return wordGetter
   }
-  const {clicked, hooked, setHooked, point, setPoint} = useContext(UserContext);
+  const {clicked, hooked, setHooked, point, setPoint, setMaxpoint} = useContext(UserContext);
   const [wordget, setWordget] = useState(WordTransform() )
   
   function WriteInOclusion(){
@@ -59,12 +60,10 @@ export default function Tips() {
     }
     setWordget([...arrCopy])
     console.log(arrCopy)
-    
   }, [clicked]);
 
   return (
     <ThisTips>
-        {point+'/'+maxPoints.length}
       <div className="word">
         <WriteInOclusion />
       </div>
