@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Gallow from "./Gallow";
 import Tips from "./Tips";
-import {  useState, createContext  } from "react";
+import {  useState, createContext, useEffect  } from "react";
 import MyMessage from "./Message";
 
 export const UserContext = createContext();
@@ -16,13 +16,13 @@ export default function MyWrapper() {
     function LoadMessage(){
         if (point < maxpoint) {
             if (hooked > 5) {
-           return <MyMessage type={false}/>
+                return <MyMessage myType={false}></MyMessage>
             }
             else{
-               return null
+                return null
             }
         }else{
-           return <MyMessage type={true}/>
+            return <MyMessage myType={true}/>
         }
     }
 
@@ -52,7 +52,6 @@ justify-content: center;
 align-items: flex-start;
 width: 90vw;
 height: 28vh;
-background-color: aqua;
 position: absolute;
 bottom: 5vh;
 left: 50%;
@@ -72,7 +71,7 @@ div{
     cursor: pointer;
     height: 60px;
     width: 60px;
-    background-color: white;
+    border: 1px solid black;
     border-radius: 16px;
   }
 

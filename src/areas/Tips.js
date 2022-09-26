@@ -78,7 +78,6 @@ export default function Tips() {
     align-items: center;
     width: 39vw;
     height: 60vh;
-    background-color: aqua;
     position: absolute;
     top: 5vh;
     right: 5vw;

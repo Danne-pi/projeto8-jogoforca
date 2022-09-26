@@ -32,7 +32,6 @@ export default function Gallow(props) {
     align-items: center;
     width: 50vw;
     height: 60vh;
-    background-color: aqua;
     position: absolute;
     top: 5vh;
     left: 5vw;

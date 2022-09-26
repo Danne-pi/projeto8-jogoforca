@@ -9,4 +9,6 @@ export function SelectWord(){
 }
 SelectWord()
 
+
+
 ReactDOM.render(App(), document.querySelector(".root"))
