@@ -9,6 +9,7 @@ export default function MyWrapper() {
     
     const [clicked, setClicked] = useState([])
     const [hooked, setHooked] = useState(-1)
+    const [point, setPoint] = useState(0)
 
     function WriteTheseWords(){
       return alphabet.map((item)=>(<div onClick={() => setClicked([...clicked, item])}
@@ -18,7 +19,7 @@ export default function MyWrapper() {
     }
 
     return (
-        <UserContext.Provider value={{clicked, hooked, setHooked}}>
+        <UserContext.Provider value={{clicked, hooked, setHooked, point, setPoint}}>
           <Gallow image={hooked}/>
           <Tips />
           <ThisKeywords>

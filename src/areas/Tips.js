@@ -9,6 +9,7 @@ export default function Tips() {
   let wordActArr = []
   let wordShowArr = []
   let wordGetter = []
+  let maxPoints = []
 
   function WordTransform(){
     wordShow = localStorage.getItem('palavra')
@@ -19,9 +20,10 @@ export default function Tips() {
       const thisObject = {word: wordActual[i], obscure: true}
       wordGetter.push(thisObject)
     }
+    maxPoints = [...new Set(wordActual)];
     return wordGetter
   }
-  const {clicked, hooked, setHooked} = useContext(UserContext);
+  const {clicked, hooked, setHooked, point, setPoint} = useContext(UserContext);
   const [wordget, setWordget] = useState(WordTransform() )
   
   function WriteInOclusion(){
@@ -40,6 +42,7 @@ export default function Tips() {
         if(wordget[i].obscure === false){
           thisWord = {word: wordget[i].word, obscure: false}
           arrCopy.push(thisWord)
+
         }
         else{
           thisWord = {word: wordget[i].word, obscure: true}
@@ -47,14 +50,21 @@ export default function Tips() {
         }
       }
     }
-    setHooked(hooked+1)
-    console.log(wordget.includes(clicked.length-1))
+    console.log(wordActArr.includes(clicked[clicked.length-1]))
+    if(wordActArr.includes(clicked[clicked.length-1])){
+      setPoint(point+1)
+    }
+    else{
+      setHooked(hooked+1)
+    }
     setWordget([...arrCopy])
     console.log(arrCopy)
+    
   }, [clicked]);
 
   return (
     <ThisTips>
+        {point+'/'+maxPoints.length}
       <div className="word">
         <WriteInOclusion />
       </div>
